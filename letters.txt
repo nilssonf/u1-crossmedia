@@ -1,0 +1,7 @@
+Background: A, B, K, I, O, T, Y
+
+Liten: E, J, H, N, R, W, Z 
+
+Ljud: C, L, M, S, Q, X 
+
+Ord: D, F, G, P, U, V 
