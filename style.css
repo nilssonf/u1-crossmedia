@@ -14,3 +14,15 @@ body{
     width: 50vw;
 
 }
+
+.word{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 50vw;
+    font-size: 100px; 
+    font-family: 'Courier New', monospace;
+    color: orange;
+}
