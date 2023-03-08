@@ -1,28 +1,123 @@
-body{
-    height: 100vh;
-    margin: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    
+body {
+  height: 100vh;
+  margin: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .pic {
-    position: absolute;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50vh;
-    width: 50vw;
-
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  width: 50vw;
 }
 
-.word{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    width: 50vw;
-    font-size: 100px; 
-    font-family: 'Courier New', monospace;
-    color: orange;
+.word {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 50vw;
+  font-size: 100px;
+  font-family: "Courier New", monospace;
+  color: orange;
+}
+
+.line-1 {
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 5vw;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 3s steps(24) 1s 1 normal both,
+    blinkTextCursor 800ms steps(44) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 10em;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.line-2 {
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 5vw;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+/* Animation */
+.anim-typewriter2 {
+  animation: typewriter2 3s steps(24) 1s 1 normal both,
+    blinkTextCursor2 800ms steps(44) infinite normal;
+}
+@keyframes typewriter2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 10em;
+  }
+}
+@keyframes blinkTextCursor2 {
+  from {
+    border-right-color: rgba(0, 0, 0, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.text {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 50vw;
+  font-size: 100px;
+  font-family: "Courier New", monospace;
+  color: black;
+}
+
+#ball {
+  height: 30vh;
+  position: absolute;
+  top: -285px;
+
+  transition: top 7s;
 }
