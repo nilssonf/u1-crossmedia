@@ -226,39 +226,67 @@ function ranNumb(max) {
 }
 
 ////////////////////////////////////////////////// PART 2
-document.addEventListener("keydown", function (e) {
-  if (e.code == "Space") {
-    body.innerHTML = `
-      <audio id="punk" controls style="display:none"> <source src="sound/punk.mp3" type="audio/mp3"> </audio>
-       <img id="ball" src="part2/discoball.gif">
-       <img id="floor" src="part2/33bk.gif">
+function part2() {
+    
+    document.addEventListener("keydown", function (e) {
+      if (e.key == "e") {
+        body.innerHTML = `
+          <audio id="punk" controls style="display:none"> <source src="sound/punk.mp3" type="audio/mp3"> </audio>
+           <img id="ball" src="part2/discoball.gif">
+           <img id="floor" src="part2/33bk.gif">
+    
+           <img id="char1" src="part2/xw.gif">
+           <img id="char2" src="part2/XiPu.gif">
+           <img id="char3" src="part2/hdt.gif">`;
+        body.style.backgroundColor = "black";
+        body.style.backgroundImage = "none";
+        document.getElementById("punk").play();
+    
+        setTimeout(() => {
+          document.getElementById("ball").style.top = "5vh";
+          document.getElementById("floor").style.bottom = "-5vh";
+          document.getElementById("char1").style.opacity = "100%";
+          document.getElementById("char2").style.opacity = "100%";
+          document.getElementById("char3").style.opacity = "100%";
+    
+        }, 5000);
+      }
 
-       <img id="char1" src="part2/xw.gif">
-       <img id="char2" src="part2/XiPu.gif">
-       <img id="char3" src="part2/hdt.gif">`;
-    body.style.backgroundColor = "black";
-    body.style.backgroundImage = "none";
-    document.getElementById("punk").play();
+      else if (e.key == "r") {
+        document.getElementById("riddle").play();
+      }
 
-    setTimeout(() => {
-      document.getElementById("ball").style.top = "5vh";
-      document.getElementById("floor").style.bottom = "-5vh";
-      document.getElementById("char1").style.opacity = "100%";
-      document.getElementById("char2").style.opacity = "100%";
-      document.getElementById("char3").style.opacity = "100%";
-
-    }, 5000);
-  }
-});
+      else{
+        document.getElementById("tryagain").play();
+      }
+    });
+}
 
 function spaceText() {
+    part2();
   body.style.backgroundColor = "black";
   body.style.backgroundImage = "";
 
   body.innerHTML =
-    '<h1 class="line-1 anim-typewriter"> do NOT press SPACE </h1> <audio id="punk" controls style="display:none"> <source src="sound/punk.mp3" type="audio/mp3"> </audio>';
+    `<h1 class="line-1"></h1>
+     <audio id="punk" controls style="display:none"> <source src="sound/punk.mp3" type="audio/mp3"> </audio>
+     
+     <audio id="intro" controls style="display:none"> <source src="sound/intro.mp3" type="audio/mp3"> </audio>
+     <audio id="riddle" controls style="display:none"> <source src="sound/riddle.mp3" type="audio/mp3"> </audio>
+     <audio id="tryagain" controls style="display:none"> <source src="sound/tryagain.mp3" type="audio/mp3"> </audio>
+     `;
+
+     document.getElementById("intro").play();
+
+     setTimeout(()=>{
+        document.getElementById("riddle").play();
+     }, 12000)
+
+     setTimeout(()=>{
+        document.querySelector(".line-1").innerHTML='press r to repeat the riddle'
+     }, 24000)
 }
 
-setTimeout(spaceText, 4000);
+setTimeout(spaceText, 50000);
 
 init();

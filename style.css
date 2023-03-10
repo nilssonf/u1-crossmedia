@@ -37,15 +37,16 @@ body {
 }
 
 .line-1 {
-  width: 24em;
-  margin: 0 auto;
-  border-right: 2px solid rgba(255, 255, 255, 0.75);
-  font-size: 5vw;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  transform: translateY(-50%);
-}
+    width: 24em;
+    margin: 0 auto;
+    /*! border-right: 2px solid rgba(255, 255, 255, 0.75); */
+    font-size: 3vw;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+    margin-bottom: 75vh;
+  }
 
 /* Animation */
 .anim-typewriter {
