@@ -230,14 +230,24 @@ document.addEventListener("keydown", function (e) {
   if (e.code == "Space") {
     body.innerHTML = `
       <audio id="punk" controls style="display:none"> <source src="sound/punk.mp3" type="audio/mp3"> </audio>
-       <img id="ball" src="part2/discoball.gif">`;
+       <img id="ball" src="part2/discoball.gif">
+       <img id="floor" src="part2/33bk.gif">
+
+       <img id="char1" src="part2/xw.gif">
+       <img id="char2" src="part2/XiPu.gif">
+       <img id="char3" src="part2/hdt.gif">`;
     body.style.backgroundColor = "black";
     body.style.backgroundImage = "none";
     document.getElementById("punk").play();
 
     setTimeout(() => {
-      document.getElementById("ball").style.top = "55px";
-    }, 9000);
+      document.getElementById("ball").style.top = "5vh";
+      document.getElementById("floor").style.bottom = "-5vh";
+      document.getElementById("char1").style.opacity = "100%";
+      document.getElementById("char2").style.opacity = "100%";
+      document.getElementById("char3").style.opacity = "100%";
+
+    }, 5000);
   }
 });
 
@@ -249,6 +259,6 @@ function spaceText() {
     '<h1 class="line-1 anim-typewriter"> do NOT press SPACE </h1> <audio id="punk" controls style="display:none"> <source src="sound/punk.mp3" type="audio/mp3"> </audio>';
 }
 
-setTimeout(spaceText, 80000);
+setTimeout(spaceText, 4000);
 
 init();
