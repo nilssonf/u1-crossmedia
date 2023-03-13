@@ -37,16 +37,16 @@ body {
 }
 
 .line-1 {
-    width: 24em;
-    margin: 0 auto;
-    /*! border-right: 2px solid rgba(255, 255, 255, 0.75); */
-    font-size: 3vw;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);
-    margin-bottom: 75vh;
-  }
+  width: 24em;
+  margin: 0 auto;
+  /*! border-right: 2px solid rgba(255, 255, 255, 0.75); */
+  font-size: 3vw;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  font-family: "Courier New", monospace;
+}
 
 /* Animation */
 .anim-typewriter {
@@ -79,6 +79,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   transform: translateY(-50%);
+  font-family: "Courier New", monospace;
 }
 
 /* Animation */
@@ -134,9 +135,14 @@ body {
   height: 30vh;
   position: absolute;
   bottom: 10vh;
-
+  border-radius: 76px;
   opacity: 0%;
   transition: opacity 10s 5s;
+}
+#char1:hover {
+  background-color: #f5deb340;
+  border-radius: 76px;
+  cursor: pointer;
 }
 
 #char2 {
@@ -144,8 +150,14 @@ body {
   position: absolute;
   bottom: 20vh;
   left: 20vw;
+  border-radius: 76px;
   opacity: 0%;
   transition: opacity 10s 10s;
+}
+#char2:hover {
+  background-color: #f5deb340;
+  border-radius: 76px;
+  cursor: pointer;
 }
 
 #char3 {
@@ -153,6 +165,27 @@ body {
   position: absolute;
   bottom: 21vh;
   right: 20vw;
+  border-radius: 76px;
   opacity: 0%;
   transition: opacity 10s 15s;
+}
+#char3:hover {
+  background-color: #f5deb340;
+  border-radius: 76px;
+  cursor: pointer;
+}
+
+#expl {
+  height: 200vh;
+  position: fixed;
+  top: -52vh;
+  left: -7vw;
+}
+
+#dont {
+  position: fixed;
+  top: 3vh;
+  left: 10vh;
+  display: none;
+  font-family: "Courier New", monospace;
 }

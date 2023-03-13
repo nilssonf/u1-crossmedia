@@ -13,6 +13,7 @@ function init() {
     }, 7000);
   }, 8000);
 }
+
 ////////////////////////////////////////////////// BACKGROUND
 document.addEventListener("keydown", function (e) {
   if (e.key == "a") {
@@ -129,7 +130,6 @@ document.addEventListener("keydown", function (e) {
 });
 
 ////////////////////////////////////////////////// SOUND
-
 document.addEventListener("keydown", function (e) {
   if (e.key == "q") {
     document.getElementById("waves").play();
@@ -226,49 +226,122 @@ function ranNumb(max) {
 }
 
 ////////////////////////////////////////////////// PART 2
+function refresh() {
+  document.addEventListener("keydown", function (b) {
+    if (b.code == "Space") {
+      let expl = document.createElement("div");
+      body.appendChild(expl);
+      expl.innerHTML = `
+            <img id="expl" src="part2/expl.gif">
+            `;
+      document.getElementById("explosion").play();
+      setTimeout(() => {
+        this.location.reload();
+      }, 700);
+    }
+  });
+}
+
+function changeChar() {
+  let charArr = [
+    "3AlV",
+    "hdt",
+    "7Uz",
+    "xw",
+    "XiPu",
+    "3uG2",
+    "4FB4",
+    "xw",
+    "yb",
+  ];
+
+  document.getElementById("char1").addEventListener("click", () => {
+    document.getElementById("char1").src = `part2/${
+      charArr[ranNumb(charArr.length)]
+    }.gif`;
+  });
+
+  document.getElementById("char2").addEventListener("click", () => {
+    document.getElementById("char2").src = `part2/${
+      charArr[ranNumb(charArr.length)]
+    }.gif`;
+  });
+
+  document.getElementById("char3").addEventListener("click", () => {
+    document.getElementById("char3").src = `part2/${
+      charArr[ranNumb(charArr.length)]
+    }.gif`;
+  });
+}
+
 function part2() {
-    
-    document.addEventListener("keydown", function (e) {
-      if (e.key == "e") {
-        body.innerHTML = `
+  document.addEventListener("keydown", function (e) {
+    if (e.key == "e") {
+      body.innerHTML = `
           <audio id="punk" controls style="display:none"> <source src="sound/punk.mp3" type="audio/mp3"> </audio>
+
+          <audio id="explosion" controls style="display:none"> <source src="sound/explosion-6055.mp3" type="audio/mp3"> </audio>
+
            <img id="ball" src="part2/discoball.gif">
            <img id="floor" src="part2/33bk.gif">
+
+           <h1 id="dont"></h1>
+
+           <audio id="gg" controls style="display:none"> <source src="sound/gg.mp3" type="audio/mp3"> </audio>
     
            <img id="char1" src="part2/xw.gif">
-           <img id="char2" src="part2/XiPu.gif">
+           <img id="char2" src="part2/3AlV.gif">
            <img id="char3" src="part2/hdt.gif">`;
-        body.style.backgroundColor = "black";
-        body.style.backgroundImage = "none";
-        document.getElementById("punk").play();
-    
-        setTimeout(() => {
-          document.getElementById("ball").style.top = "5vh";
-          document.getElementById("floor").style.bottom = "-5vh";
-          document.getElementById("char1").style.opacity = "100%";
-          document.getElementById("char2").style.opacity = "100%";
-          document.getElementById("char3").style.opacity = "100%";
-    
-        }, 5000);
-      }
+      body.style.backgroundColor = "black";
+      body.style.backgroundImage = "none";
+      document.getElementById("gg").play();
+      document.getElementById("punk").play();
 
-      else if (e.key == "r") {
-        document.getElementById("riddle").play();
-      }
+      setTimeout(() => {
+        document.getElementById("ball").style.top = "5vh";
+        document.getElementById("floor").style.bottom = "-5vh";
+        document.getElementById("char1").style.opacity = "100%";
+        document.getElementById("char2").style.opacity = "100%";
+        document.getElementById("char3").style.opacity = "100%";
+      }, 5000);
 
-      else{
-        document.getElementById("tryagain").play();
-      }
-    });
+      setTimeout(() => {
+        document.getElementById("dont").innerHTML =
+          "randomize a new dancer <br>by clicking on it";
+        document.getElementById("dont").style.display = "block";
+      }, 15000);
+
+      setTimeout(() => {
+        document.getElementById("dont").innerHTML = "";
+      }, 38000);
+
+      setTimeout(() => {
+        document.getElementById("dont").innerHTML = "do NOT press SPACE";
+        document.getElementById("dont").style.color = "red";
+      }, 40000);
+
+      changeChar();
+
+      refresh();
+    } else if (e.key == "r") {
+      document.getElementById("riddle").play();
+      document.querySelector(
+        ".line-1"
+      ).innerHTML = `From the beginning of eternity <br> To the end of time and space <br> To the beginning of every end <br> And the end of every place <br>
+
+      What am I?`;
+    } else {
+      document.getElementById("tryagain").play();
+    }
+  });
 }
 
 function spaceText() {
-    part2();
+  part2();
   body.style.backgroundColor = "black";
   body.style.backgroundImage = "";
 
-  body.innerHTML =
-    `<h1 class="line-1"></h1>
+  body.innerHTML = `<h1 class="line-1"></h1>
      <audio id="punk" controls style="display:none"> <source src="sound/punk.mp3" type="audio/mp3"> </audio>
      
      <audio id="intro" controls style="display:none"> <source src="sound/intro.mp3" type="audio/mp3"> </audio>
@@ -276,17 +349,18 @@ function spaceText() {
      <audio id="tryagain" controls style="display:none"> <source src="sound/tryagain.mp3" type="audio/mp3"> </audio>
      `;
 
-     document.getElementById("intro").play();
+  document.getElementById("intro").play();
 
-     setTimeout(()=>{
-        document.getElementById("riddle").play();
-     }, 12000)
+  setTimeout(() => {
+    document.getElementById("riddle").play();
+  }, 12000);
 
-     setTimeout(()=>{
-        document.querySelector(".line-1").innerHTML='press r to repeat the riddle'
-     }, 24000)
+  setTimeout(() => {
+    document.querySelector(".line-1").innerHTML =
+      "press r to repeat the riddle";
+  }, 24000);
 }
 
-setTimeout(spaceText, 50000);
+setTimeout(spaceText, 70000);
 
 init();
