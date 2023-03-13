@@ -74,7 +74,7 @@ body {
   width: 24em;
   margin: 0 auto;
   border-right: 2px solid rgba(255, 255, 255, 0.75);
-  font-size: 5vw;
+  font-size: 4vw;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -92,7 +92,7 @@ body {
     width: 0;
   }
   to {
-    width: 10em;
+    width: 10.5em;
   }
 }
 @keyframes blinkTextCursor2 {

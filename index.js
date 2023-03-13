@@ -7,7 +7,7 @@ function init() {
 
   setTimeout(() => {
     document.querySelector(".text").innerHTML =
-      '<h1 class="line-2 anim-typewriter2"> press any letter </h1>';
+      '<h1 class="line-2 anim-typewriter2"> press any letters </h1>';
     setTimeout(() => {
       document.querySelector(".text").style.display = "none";
     }, 7000);
