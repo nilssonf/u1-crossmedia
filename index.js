@@ -1,6 +1,10 @@
 var background = document.querySelector(".background");
 var body = document.querySelector("body");
 
+function ranNumb(max) {
+    return Math.floor(Math.random() * max);
+  }
+
 function init() {
   document.querySelector(".text").innerHTML =
     '<h1 class="line-2 anim-typewriter2"> welcome to FM-NE </h1>';
@@ -220,10 +224,6 @@ document.addEventListener("keydown", function (e) {
     word.style.left = `${ranNumb(50)}vw`;
   }
 });
-
-function ranNumb(max) {
-  return Math.floor(Math.random() * max);
-}
 
 ////////////////////////////////////////////////// PART 2
 function refresh() {
