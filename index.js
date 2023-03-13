@@ -219,7 +219,7 @@ document.addEventListener("keydown", function (e) {
 document.addEventListener("keydown", function (e) {
   if (e.key == "v") {
     let word = document.querySelector(".word");
-    word.textContent = "MOCCA.";
+    word.textContent = "RULLEBÖR.";
     word.style.top = `${ranNumb(50)}vh`;
     word.style.left = `${ranNumb(50)}vw`;
   }
